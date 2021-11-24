@@ -3,6 +3,13 @@ POST https://localhost:5001/api/formapagamento/create
 Content-Type: application/json
 
 {
- "Tipo": "Cartão",
- "Descricao": "Cartão de credito"
+ "Tipo": "Cartao",
+ "Descricao": "Cartao de credito"
 }
+
+###listar
+GET https://localhost:5001/api/formapagamento/list
+
+
+### Deletar um produto pelo nome
+DELETE https://localhost:5001/api/formapagamento/delete/Cartao

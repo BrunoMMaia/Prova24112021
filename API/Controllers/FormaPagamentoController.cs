@@ -27,33 +27,29 @@ namespace API.Controllers
             return Created("", FormaPagamento);
         }
 
-        //GET: api/produto/list
+        //GET: api/FormaPagamento/list
         [HttpGet]
         [Route("list")]
         public IActionResult List() =>
             Ok(_context.FormaPagamento
-            .Include(p => p.Tipo)
             .ToList());
 
 
-        //DELETE: /api/produto/delete/bolacha
-       /* [HttpDelete]
+        //DELETE: /api/delete/delete/tipo
+        [HttpDelete]
         [Route("delete/{tipo}")]
         public IActionResult Delete([FromRoute] string tipo)
         {
-            //Expressão lambda
-            //Buscar um objeto na tabela de produtos com base no nome
-            FormaPagamento FormaPagamento = _context.FormaPagamento.FirstOrDefault(formapagamento => formapagamento.Tipo == tipo);
+            FormaPagamento FormaPagamento = _context.FormaPagamento.FirstOrDefault(FormaPagamento => FormaPagamento.Tipo == tipo);
 
             if (FormaPagamento == null)
             {
                 return NotFound();
             }
-            _context.formaspagamento.Remove(formapagamento);
+            _context.FormaPagamento.Remove(FormaPagamento);
             _context.SaveChanges();
-            return Ok(_context.formaspagamento.ToList());
+            return Ok(_context.FormaPagamento.ToList());
         }
 
-        */
     }
 }
