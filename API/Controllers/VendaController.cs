@@ -12,12 +12,21 @@ namespace API.Controllers
         private readonly DataContext _context;
         public VendaController(DataContext context)
         {
-
-
-
-
             _context = context;
         }
+
+        //POST: api/venda/create
+        [HttpPost]
+        [Route("create")]
+        public IActionResult Create([FromBody] Venda venda)
+        {
+             venda.VendaItem = _context.ItensVenda.Find(venda.ItemVendaId);
+             venda.FormaPagamento = _context.FormaPagamento.Find(venda.IdFormaPagamento);
+            _context.Vendas.Add(venda);
+            _context.SaveChanges();
+            return Created("", venda);
+        }
+
 
         //GET: api/venda/list
         //ALTERAR O MÉTODO PARA MOSTRAR TODOS OS DADOS DA VENDA E OS DADOS RELACIONADOS

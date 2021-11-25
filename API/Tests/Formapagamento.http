@@ -7,6 +7,9 @@ Content-Type: application/json
  "Descricao": "Cartao de credito"
 }
 
+#  "Tipo": "pIX",
+#  "Descricao": "pix feliz"
+
 ###listar
 GET https://localhost:5001/api/formapagamento/list
 

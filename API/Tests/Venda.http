@@ -1,2 +1,15 @@
+### Criacao de uma venda
+POST https://localhost:5001/api/venda/create
+Content-Type: application/json
+
+{
+    "Cliente": "Bruno",
+    "ItemVendaId": 1,
+    "IdFormaPagamento": 1
+}
+
+
+
+
 ### Listar vendas
 POST https://localhost:5001/api/venda/list
